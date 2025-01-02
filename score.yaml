@@ -25,7 +25,7 @@ resources:
   db:
     type: postgres
   gcs:
-    type: gcs  # Tipo correto para o GCP bucket
+    type: gcs  # Tipo de recurso correspondente à definição
     definition: gcp-bucket-tutorial
     params:
       project: humlab1
