@@ -11,8 +11,6 @@ containers:
       DB_PASSWORD: ${resources.db.password}
       DB_HOST: ${resources.db.host}
       DB_PORT: ${resources.db.port}
-      GCS_BUCKET: ${resources.gcs.bucket_name}
-      GCS_REGION: ${resources.gcs.bucket_region}
 resources:
   dns:
     type: dns
@@ -24,13 +22,11 @@ resources:
       port: 80
   db:
     type: postgres
-  gcs:
-    type: gcs  # Tipo de recurso correspondente à definição
-    definition: gcp-bucket-tutorial
+  bucket:  # Atualização para o recurso bucket do GCP
+    type: gcs
     params:
-      project: humlab1
-      region: us-east1
-      bucket_name: my-node-gcs-bucket
+      bucket_name: bucket-teste-1 # Nome do recurso configurado na Humanitec
+      region: us-central1         # Região do bucket no GCP
 service:
   ports:
     www:
