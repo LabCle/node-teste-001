@@ -11,6 +11,8 @@ containers:
       DB_PASSWORD: ${resources.db.password}
       DB_HOST: ${resources.db.host}
       DB_PORT: ${resources.db.port}
+      GCP_BUCKET: ${resources.gcs.bucket_name}
+      GCP_REGION: ${resources.gcs.bucket_region}
 resources:
   dns:
     type: dns
@@ -22,6 +24,13 @@ resources:
       port: 80
   db:
     type: postgres
+  gcs:
+    type: gcs  # Tipo correto para o GCP bucket
+    definition: gcp-bucket-tutorial
+    params:
+      project: humlab1
+      region: us-central1
+      bucket_name: my-node-gcp-bucket
 service:
   ports:
     www:
