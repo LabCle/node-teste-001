@@ -29,7 +29,7 @@ resources:
     definition: gcp-bucket-tutorial
     params:
       project: humlab1
-      region: us-central1
+      region: us-east1
       bucket_name: my-node-gcs-bucket
 service:
   ports:
