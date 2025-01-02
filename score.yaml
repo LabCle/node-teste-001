@@ -11,8 +11,8 @@ containers:
       DB_PASSWORD: ${resources.db.password}
       DB_HOST: ${resources.db.host}
       DB_PORT: ${resources.db.port}
-      GCP_BUCKET: ${resources.gcs.bucket_name}
-      GCP_REGION: ${resources.gcs.bucket_region}
+      GCS_BUCKET: ${resources.gcs.bucket_name}
+      GCS_REGION: ${resources.gcs.bucket_region}
 resources:
   dns:
     type: dns
@@ -30,7 +30,7 @@ resources:
     params:
       project: humlab1
       region: us-central1
-      bucket_name: my-node-gcp-bucket
+      bucket_name: my-node-gcs-bucket
 service:
   ports:
     www:
